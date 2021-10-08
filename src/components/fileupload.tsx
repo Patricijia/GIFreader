@@ -5,7 +5,8 @@ import {
     Text,
     Flex,    
     Input,
-    Image
+    Image,
+    VisuallyHidden
 } from '@chakra-ui/react'
 
 import { validateFileSize, validateFileType } from '../service/fileValidatorService';
@@ -80,27 +81,22 @@ function FileUpload() {
                     />
                 </Box>
             </Flex>            
-        </Box>
-        <Box width="50%"
-            m="100px auto"
-            padding="2"
-            shadow="base">        
-        <Flex
-                direction="column"
-                alignItems="center"
-                mb="5"
-            >
-                <Image src={imageDescriptionResult?.imageUri ?? ""}></Image>                
-                {
-                    imageDescriptionResult &&
+        </Box>        
+        {
+            imageDescriptionResult &&
+            <Box width="50%"
+                m="100px auto"
+                padding="2"            
+                shadow="base">
+                <Flex direction="column"
+                    alignItems="center"
+                    mb="5">
+                    <Image src={imageDescriptionResult?.imageUri ?? ""}></Image> 
                     <Text mt="5" color="red">{imageDescriptionResult.description}</Text>
-                }
-                {
-                    imageDescriptionResult &&
                     <Text mt="5" color="green">{imageDescriptionResult.detectedText}</Text>
-                }
-        </Flex>
-        </Box>
+                </Flex>
+            </Box>
+        }
         </div>
     )
 }

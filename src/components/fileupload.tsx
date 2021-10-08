@@ -5,8 +5,7 @@ import {
     Text,
     Flex,    
     Input,
-    Image,
-    VisuallyHidden
+    Image    
 } from '@chakra-ui/react'
 
 import { validateFileSize, validateFileType } from '../service/fileValidatorService';

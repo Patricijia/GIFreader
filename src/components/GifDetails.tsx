@@ -12,7 +12,7 @@ function GifDetails({title, imageUri}: IGifDetailProps) {
         <div className="gif">
             <Link to={`/about/${title}`}>
                 {/* <h3>{title}</h3> */}
-                <img src={imageUri} alt =''></img>
+                <img src={imageUri} alt ='' ></img>
             </Link>
         </div>
     );

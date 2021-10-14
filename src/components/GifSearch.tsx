@@ -35,12 +35,11 @@ function GifSearch() {
         console.log(inputText);
     }
 
-
     return (<div className="app">
     <form onSubmit={onSubmit} className="search-form">
       <input className="search-bar" type="text" value={inputText} onChange={e => setInputText(e.target.value)} ></input>
-      <button className="search-button" type="submit">Search</button>
-    </form>
+      <button className="search-button" type="submit">Search</button>      
+    </form>    
     <div className="gifs">
         {gifs.map(each => (              
           <GifDetails key={each.id} title={each.title} imageUri={each.images.original.url}></GifDetails>

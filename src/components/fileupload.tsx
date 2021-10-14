@@ -90,7 +90,7 @@ function FileUpload() {
                 <Flex direction="column"
                     alignItems="center"
                     mb="5">
-                    <Image src={imageDescriptionResult?.imageUri ?? ""}></Image> 
+                    <Image src={imageDescriptionResult?.imageUri ?? ""} alt={imageDescriptionResult.description + ". Detected text in image says - " + imageDescriptionResult.detectedText}></Image> 
                     <Text mt="5" color="red">{imageDescriptionResult.description}</Text>
                     <Text mt="5" color="green">{imageDescriptionResult.detectedText}</Text>
                 </Flex>

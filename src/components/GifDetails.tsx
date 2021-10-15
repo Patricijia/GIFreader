@@ -9,11 +9,9 @@ interface IGifDetailProps {
 
 function GifDetails({title, imageUri}: IGifDetailProps) {
     return (
-        <div className="gif">
-            <Link to={`#`}>
+        <div className="gif" >
                 {/* <h3>{title}</h3> */}
-                <img src={imageUri} alt ='' ></img>
-            </Link>
+                <img tabIndex={0} src={imageUri} alt ='' ></img>            
         </div>
     );
 }

@@ -91,8 +91,8 @@ function FileUpload() {
                     alignItems="center"
                     mb="5">
                     <Image src={imageDescriptionResult?.imageUri ?? ""} alt={imageDescriptionResult.description + ". Detected text in image says - " + imageDescriptionResult.detectedText}></Image> 
-                    <Text mt="5" color="red">Image Description added to gif - {imageDescriptionResult.description}</Text>
-                    <Text mt="5" color="green">Image Text detected in gif image - {imageDescriptionResult.detectedText}</Text>
+                    <Text mt="5" color="red"><b>Image Description added to gif - </b>{imageDescriptionResult.description}</Text>
+                    <Text mt="5" color="green"><b>Image Text detected in gif image -</b> {imageDescriptionResult.detectedText}</Text>
                 </Flex>
             </Box>
         }

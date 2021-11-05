@@ -13,7 +13,7 @@ function GifSearch() {
     const apiKey = "SyBnCaulCHSRBuCc4dAc2VE4lb1HESJf";
     const [gifs, setGifs] = useState<IGifResponse[]>([]);
     const [inputText, setInputText] = useState("");
-    const [searchText, setSearchText] = useState("welcome");  
+    const [searchText, setSearchText] = useState("surprise");  
     
     const requestUri = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchText}&limit=25`;
     

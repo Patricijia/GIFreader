@@ -40,8 +40,7 @@ class FileService
 
     private getFormData(): FormData {
         const formData = new FormData();
-        formData.append('file', this.file);
-        formData.append("originalUri", "https://originalURL/");
+        formData.append('file', this.file);        
         return formData;
     }
 }

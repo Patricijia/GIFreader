@@ -24,7 +24,7 @@ class FileService
     }
 
     async uploadFile(): Promise<UploadFileResponse> {
-        const uploadResponse = await fetch('https://gifdescriptorservice.azurewebsites.net/gif/upload', {
+        const uploadResponse = await fetch('https://gifdescriptionsservice.azurewebsites.net/gif/upload', {
         // const uploadResponse = await fetch('https://localhost:5001/gif/upload', {
             method: 'POST',
             body: this.getFormData()

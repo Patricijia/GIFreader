@@ -38,6 +38,21 @@ class FileService
         };
     }
 
+    async uploadFileEnhanced(): Promise<UploadFileResponse> {
+        const uploadResponse = await fetch('https://gifdescriptorservice.azurewebsites.net/gif/upload', {
+        // const uploadResponse = await fetch('https://localhost:5001/gif/upload', {
+            method: 'POST',
+            body: this.getFormData()
+        });
+
+        const responseJson = await uploadResponse.json();
+
+        return {
+            success: uploadResponse.status === 200,
+            description: responseJson
+        };
+    }
+
     private getFormData(): FormData {
         const formData = new FormData();
         formData.append('file', this.file);        

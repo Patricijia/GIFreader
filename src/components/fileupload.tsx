@@ -15,6 +15,7 @@ import GifDescription from '../model/GifDescription';
 function FileUpload() {
     const [uploadFormError, setUploadFormError] = useState<string>('');
     const [imageDescriptionResult, setImageDescriptionResult] = useState<GifDescription>();
+    const [imageDescriptionEnhancedResult, setImageDescriptionEnhancedResult] = useState<GifDescription>();
 
     const handleFileUpload = async (element: HTMLInputElement) => {
         const file = element.files;
@@ -49,6 +50,15 @@ function FileUpload() {
         {
             setImageDescriptionResult(fileUploadResponse.description);
         }       
+
+        const fileUploadEnhancedResponse = await fileService.uploadFileEnhanced();
+
+        element.value = '';
+
+        if(fileUploadEnhancedResponse.success)
+        {
+            setImageDescriptionEnhancedResult(fileUploadEnhancedResponse.description);
+        }
     }
 
     return (
@@ -90,9 +100,26 @@ function FileUpload() {
                 <Flex direction="column"
                     alignItems="center"
                     mb="5">
+                    <Text fontSize="2xl" mb="4">Model output</Text>
                     <Image tabIndex={0} src={imageDescriptionResult?.imageUri ?? ""} alt={imageDescriptionResult.description + ". Detected text in image says - " + imageDescriptionResult.detectedText}></Image> 
-                    <Text mt="5" color="red"><b>Image Description added to gif - </b>{imageDescriptionResult.description}</Text>
-                    <Text mt="5" color="green"><b>Image Text detected in gif image -</b> {imageDescriptionResult.detectedText}</Text>
+                    <Text mt="5" color="red">Image Description added to gif - <b>{imageDescriptionResult.description}</b></Text>
+                    <Text mt="5" color="green">Text detected in gif image -<b> {imageDescriptionResult.detectedText}</b></Text>
+                </Flex>
+            </Box>
+        }
+        {            
+            imageDescriptionEnhancedResult &&
+            <Box width="50%"
+                m="100px auto"
+                padding="2"            
+                shadow="base">
+                <Flex direction="column"
+                    alignItems="center"
+                    mb="5">
+                    <Text fontSize="2xl" mb="4">Enhanced with celebrity detection</Text>
+                    <Image tabIndex={0} src={imageDescriptionEnhancedResult?.imageUri ?? ""} alt={imageDescriptionEnhancedResult.description + ". Detected text in image says - " + imageDescriptionEnhancedResult.detectedText}></Image> 
+                    <Text mt="5" color="red">Image Description added to gif - <b>{imageDescriptionEnhancedResult.description}</b></Text>
+                    <Text mt="5" color="green">Text detected in gif image -<b>{imageDescriptionEnhancedResult.detectedText}</b></Text>
                 </Flex>
             </Box>
         }

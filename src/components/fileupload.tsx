@@ -50,8 +50,6 @@ function FileUpload() {
             setImageDescriptionResult(fileUploadResponse.description);
         }       
 
-        const fileUploadEnhancedResponse = await fileService.uploadFileEnhanced();
-
         element.value = '';        
     }
 

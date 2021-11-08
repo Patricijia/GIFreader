@@ -15,7 +15,7 @@ function GifSearch() {
     const [inputText, setInputText] = useState("");
     const [searchText, setSearchText] = useState("surprise");  
     
-    const requestUri = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchText}&limit=25`;
+    const requestUri = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${searchText}&limit=10`;
     
     const fetchGifs = async () => {
         const response = await fetch(requestUri);

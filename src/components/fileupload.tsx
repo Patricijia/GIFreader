@@ -107,7 +107,7 @@ function FileUpload() {
                 </Flex>
             </Box>
         }
-        {            
+        {/* {            
             imageDescriptionEnhancedResult &&
             <Box width="50%"
                 m="100px auto"
@@ -122,7 +122,7 @@ function FileUpload() {
                     <Text mt="5" color="green">Text detected in gif image -<b>{imageDescriptionEnhancedResult.detectedText}</b></Text>
                 </Flex>
             </Box>
-        }
+        } */}
         </div>
     )
 }

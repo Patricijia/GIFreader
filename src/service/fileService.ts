@@ -30,12 +30,43 @@ class FileService
             body: this.getFormData()
         });
 
-        const responseJson = await uploadResponse.json();
-
-        return {
-            success: uploadResponse.status === 200,
-            description: responseJson
-        };
+        if(uploadResponse.status === 200)
+        {
+            const responseJson = await uploadResponse.json();
+            return {
+                success: uploadResponse.status === 200,
+                description: responseJson
+            };
+        }
+        else 
+        {
+            const uploadResponseRetry = await fetch('https://gifdescriptionsservice.azurewebsites.net/gif/upload', {
+                // const uploadResponse = await fetch('https://localhost:5001/gif/upload', {
+                    method: 'POST',
+                    body: this.getFormData()
+                });
+            if(uploadResponseRetry.status === 200)
+            {
+                const responseJson = await uploadResponseRetry.json();
+                return {
+                    success: uploadResponseRetry.status === 200,
+                    description: responseJson
+                };
+            }
+            else
+            {
+                const uploadResponseRetryAgain = await fetch('https://gifdescriptionsservice.azurewebsites.net/gif/upload', {
+                // const uploadResponse = await fetch('https://localhost:5001/gif/upload', {
+                    method: 'POST',
+                    body: this.getFormData()
+                });
+                const responseJson = await uploadResponseRetryAgain.json();
+                return {
+                    success: uploadResponseRetryAgain.status === 200,
+                    description: responseJson
+                };                
+            }
+        }        
     }
 
     async uploadFileEnhanced(): Promise<UploadFileResponse> {

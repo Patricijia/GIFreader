@@ -62,3 +62,27 @@ nav {
   align-items: center;
   list-style: none;
 }
+
+.next-previous-buttons {
+  text-align: center;  
+}
+
+.previous-button {
+  display: inline;
+  margin-bottom: 30px;
+}
+
+.next-button {
+  display: inline;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  margin-bottom: 10px;
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: 0px;
+  cursor: pointer;
+}

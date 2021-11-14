@@ -40,7 +40,9 @@ function GifSearch() {
 
     const onSubmit = (e: any) => {
         e.preventDefault();
-        setSearchText(inputText);
+        setOffsetCount(0);
+        setIsPreviousDisabled(true);
+        setSearchText(inputText);        
         console.log(inputText);
     }
 

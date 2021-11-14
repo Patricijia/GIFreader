@@ -66,7 +66,7 @@ function FileUpload() {
                 alignItems="center"
                 mb="5"
             >
-                <Text fontSize="2xl" mb="4">Upload a File</Text>
+                <Text fontSize="2xl" mb="4">Upload a File (supported formats - .gif and .mp4. Files must be less than 4MB in size)</Text>
                 {
                     uploadFormError &&
                     <Text mt="5" color="red">{uploadFormError}</Text>
@@ -84,7 +84,7 @@ function FileUpload() {
             </Flex>            
         </Box>        
         {
-            imageDescriptionResult &&
+            imageDescriptionResult && imageDescriptionResult.imageUri?.includes('.gif') &&
             <Box width="50%"
                 m="100px auto"
                 padding="2"            
@@ -94,6 +94,22 @@ function FileUpload() {
                     mb="5">
                     <Text fontSize="2xl" mb="4">Model output</Text>
                     <Image tabIndex={0} src={imageDescriptionResult?.imageUri ?? ""} alt={imageDescriptionResult.description + ". Detected text in image says - " + imageDescriptionResult.detectedText}></Image> 
+                    <Text mt="5" color="red">Image Description added to gif - <b>{imageDescriptionResult.description}</b></Text>
+                    <Text mt="5" color="green">Text detected in gif image -<b> {imageDescriptionResult.detectedText}</b></Text>
+                </Flex>
+            </Box>
+        }
+        {
+            imageDescriptionResult && imageDescriptionResult.imageUri?.includes('.mp4') &&
+            <Box width="50%"
+                m="100px auto"
+                padding="2"            
+                shadow="base">
+                <Flex direction="column"
+                    alignItems="center"
+                    mb="5">
+                    <Text fontSize="2xl" mb="4">Model output</Text>
+                    <video role="img" tabIndex={0} src={imageDescriptionResult?.imageUri ?? ""} aria-label={imageDescriptionResult.description + ". Detected text in image says - " + imageDescriptionResult.detectedText} autoPlay loop muted></video> 
                     <Text mt="5" color="red">Image Description added to gif - <b>{imageDescriptionResult.description}</b></Text>
                     <Text mt="5" color="green">Text detected in gif image -<b> {imageDescriptionResult.detectedText}</b></Text>
                 </Flex>

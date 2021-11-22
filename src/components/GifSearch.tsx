@@ -15,6 +15,7 @@ function GifSearch() {
     const apiKey = "SyBnCaulCHSRBuCc4dAc2VE4lb1HESJf";
     const [gifs, setGifs] = useState<IGifResponse[]>([]);
     const [isPreviousDisabled, setIsPreviousDisabled] = useState(true);
+    const [isFeedbackEnabled, setIsFeedbackEnabled] = useState(false);
     const [offsetCount, setOffsetCount] = useState(0);
     const [inputText, setInputText] = useState("");
     const [searchText, setSearchText] = useState("surprise");  
@@ -67,15 +68,23 @@ function GifSearch() {
         fetchGifs();
     };
 
+    const feedbackClicked = (e: any) =>
+    {
+        e.preventDefault();
+        setIsFeedbackEnabled(!isFeedbackEnabled);        
+    };
+
     return (
     <div className="app">
         <form onSubmit={onSubmit} className="search-form">
         <input className="search-bar" type="text" value={inputText} onChange={e => setInputText(e.target.value)} ></input>
         <button className="search-button" type="submit">Search</button>      
+        <button className={!isFeedbackEnabled ? 'show-feedback-btn': 'show-feedback-btn hide-feedback'} onClick={feedbackClicked}>Show Feedback</button>
+        <button className={isFeedbackEnabled ? 'show-feedback-btn': 'show-feedback-btn hide-feedback'} onClick={feedbackClicked}>Hide Feedback</button>
         </form>    
         <div className="gifs">
             {gifs.map(each => (              
-            <GifDetails key={each.id} title={each.title} imageUri={each.images.original.url}></GifDetails>
+            <GifDetails key={each.id} title={each.title} imageUri={each.images.original.url} isFeedbackEnabled={isFeedbackEnabled}></GifDetails>
             ))}            
         </div>
         <div className="next-previous-buttons">

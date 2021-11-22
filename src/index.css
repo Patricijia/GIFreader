@@ -40,6 +40,24 @@ code {
   cursor:pointer;
 }
 
+.show-feedback-btn {
+  background: lightslategray;
+  border: none;
+  margin-left: 10px;
+  padding: 10px 20px;
+  color:white;
+  cursor:pointer;
+}
+
+.hide-feedback-btn {
+  background: lightslategray;
+  border: none;
+  margin-left: 10px;
+  padding: 10px 20px;
+  color:white;
+  cursor:pointer;
+}
+
 .gifs {
   display: flex;
   justify-content: space-around;
@@ -85,4 +103,29 @@ nav {
   background: none;
   border: 0px;
   cursor: pointer;
+}
+
+.selected-icon {
+  color: blue;
+}
+
+.selected-icon-false {
+  color: red;
+}
+
+.marginTop {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hide-feedback {
+  display: none;
+}
+
+.feedback-icon {
+ transition: all .1s ease-in-out; 
+}
+
+.feedback-icon:hover {
+  transform: scale(2); 
 }

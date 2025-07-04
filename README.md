@@ -151,3 +151,50 @@ In this project, BLIP is used to describe a GIF (via a sampled frame) and extrac
 
 > 🧠 **Observation**:
 > While BLIP generates more accurate captions, it's significantly slower. CNN-LSTM is faster, making it more suitable for real-time use in a Web Accessibility Reader.
+
+---
+
+## Project Structure and Setup
+
+### Directory Structure (as of July 4, 2025)
+
+* `ChromeExtension/`
+* `GifModelRe/`
+* `GifTestBenchWebApp/`
+* `gif_accessibility_system.py`
+* `.gitignore`
+* `README.md`
+* `requirements.txt`
+
+### Important Notes
+
+* `requirements.txt` may be **outdated**. It is recommended to manually install and verify all dependencies, especially for PyTorch, Flask, and BLIP-related packages.
+
+### Running the Project
+
+1. **Activate Python Environment**
+
+```bash
+source python3/bin/activate
+```
+
+2. **Run Flask API Service**
+
+```bash
+python gif_accessibility_system.py
+```
+
+3. **Start Frontend (GifTestBenchWebApp)**
+
+```bash
+cd GifTestBenchWebApp
+npm install
+npm start
+```
+
+4. **Use ChromeExtension**
+
+* Load the `ChromeExtension/` directory as an unpacked extension in Chrome or Firefox Developer Mode.
+
+---
+

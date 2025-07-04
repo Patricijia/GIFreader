@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "GIF Accessibility Reader",
+  "version": "1.0",
+  "description": "Adds AI-generated alt text to GIFs via local backend.",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

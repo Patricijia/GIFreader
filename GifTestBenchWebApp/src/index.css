@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.app {
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+
+.search-form {
+  min-height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  width:50%;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.search-button {
+  background: lightcoral;
+  border: none;
+  padding: 10px 20px;
+  color:white;
+  cursor:pointer;
+}
+
+.show-feedback-btn {
+  background: lightslategray;
+  border: none;
+  margin-left: 10px;
+  padding: 10px 20px;
+  color:white;
+  cursor:pointer;
+}
+
+.hide-feedback-btn {
+  background: lightslategray;
+  border: none;
+  margin-left: 10px;
+  padding: 10px 20px;
+  color:white;
+  cursor:pointer;
+}
+
+.gifs {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(73,79,82);
+  color: aquamarine;
+}
+
+.nav-links {
+  width:40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.next-previous-buttons {
+  text-align: center;  
+}
+
+.previous-button {
+  display: inline;
+  margin-bottom: 30px;
+}
+
+.next-button {
+  display: inline;
+  margin-left: 10px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  margin-bottom: 10px;
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: 0px;
+  cursor: pointer;
+}
+
+.selected-icon {
+  color: blue;
+}
+
+.selected-icon-false {
+  color: red;
+}
+
+.marginTop {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hide-feedback {
+  display: none;
+}
+
+.feedback-icon {
+ transition: all .1s ease-in-out; 
+}
+
+.feedback-icon:hover {
+  transform: scale(2); 
+}
